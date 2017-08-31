@@ -1,0 +1,61 @@
+$edge-padding: 20px;
+$text-color: white;
+
+* {
+    font-family: Arial;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+
+    -webkit-transition: opacity 0.15s;
+    -moz-transition: opacity 0.15s;
+    -ms-transition: opacity 0.15s;
+    -o-transition: opacity 0.15s;
+    transition: opacity 0.15s;
+
+    &:hover {
+        text-decoration: none;
+        opacity: 0.7;
+    }
+    &:visited {
+        color: $text-color;
+    }
+}
+
+$logo-size: 40px;
+#nts-logo {
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+    background-image: url('NTS_LOGO_MASTER white.png');
+    background-size: $logo-size;
+    position: absolute;
+
+    top: $edge-padding;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
+    &:hover {
+        opacity: 0.75;
+    }
+
+    -webkit-transition: all 0.13s;
+    -moz-transition: all 0.13s;
+    -ms-transition: all 0.13s;
+    -o-transition: all 0.13s;
+    transition: all 0.13s;
+}
