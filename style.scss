@@ -1,5 +1,5 @@
 $edge-padding: 20px;
-$text-color: white;
+$text-color: black;
 
 * {
     font-family: Arial;
@@ -7,10 +7,12 @@ $text-color: white;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+    color: $text-color;
 }
 
 body {
-    background-color: black;
+    background-color: white;
 }
 
 a {
@@ -37,7 +39,7 @@ $logo-size: 40px;
     display: block;
     width: $logo-size;
     height: $logo-size;
-    background-image: url('NTS_LOGO_MASTER white.png');
+    background-image: url('NTS_LOGO_MASTER.png');
     background-size: $logo-size;
     position: absolute;
 

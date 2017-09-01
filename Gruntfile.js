@@ -4,6 +4,52 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        babel: {
+            options: {
+                plugins: ['transform-react-jsx'],
+                presets: ['es2015', 'react']
+            },
+            jsx: {
+                files: [{
+                    expand: true,
+                    cwd: 'react/',
+                    src: [
+                        '*.jsx', '**/*.jsx',
+                        '*.js', '**/*.js',
+                    ],
+                    dest: 'react_compiled/',
+                    ext: '.js',
+                }],
+            }
+        },
+
+        /**
+         * Browserify
+         *
+         * Allows for modules / packages / requires in client-side Javascript,
+         *  and merges all source files & their requirements into one 'bundle'.
+         *
+         */
+        browserify: {
+            options: {
+                browserifyOptions: {
+                    debug: true, // creates source map in file for development
+                },
+            },
+            bundle: {
+                files: {
+                    'public/js/react-bundle.js': [
+                        'react_compiled/**/*.js',
+                    ],
+                },
+                options: {
+                    // exclude: [
+                    //     'react/compiled/react-index.js',
+                    // ],
+                },
+            },
+        },
+
         /**
          * Converts our Sass files to CSS.
          */
@@ -32,6 +78,10 @@ module.exports = function (grunt) {
                 files: ['style.scss'],
                 tasks: ['sass:compile']
             },
+            react: {
+                files: ['react/*.jsx', 'react/**/*.jsx', 'react/**/*.js'],
+                tasks: ['babel', 'browserify'],
+            },
             configFiles: {
                 files: ['Gruntfile.js'],
                 options: {
@@ -43,6 +93,8 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-browserify');
 
     grunt.registerTask('development', ['sass:compile', 'watch']);
 

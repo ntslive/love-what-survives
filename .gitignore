@@ -2,3 +2,5 @@ style.css
 style.css.map
 node_modules
 .sass-cache
+react_compiled
+public/js/react-bundle.js

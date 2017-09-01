@@ -1,27 +1,40 @@
 {
-    "name": "love-what-survives",
-    "version": "1.0.0",
-    "description": "Project page for Mount Kimbie's album release radio show.",
-    "main": "index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ntslive/love-what-survives.git"
-    },
-    "author": "NTS Radio",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ntslive/love-what-survives/issues"
-    },
-    "homepage": "https://github.com/ntslive/love-what-survives#readme",
-    "dependencies": {
-        "express": "^4.14.0"
-    },
-    "devDependencies": {
-        "grunt": "^1.0.1",
-        "grunt-contrib-sass": "^1.0.0",
-        "grunt-contrib-watch": "^1.0.0"
-    }
+  "name": "love-what-survives",
+  "version": "1.0.0",
+  "description": "Project page for Mount Kimbie's album release radio show.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntslive/love-what-survives.git"
+  },
+  "author": "NTS Radio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntslive/love-what-survives/issues"
+  },
+  "homepage": "https://github.com/ntslive/love-what-survives#readme",
+  "dependencies": {
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.14.0",
+    "grunt-babel": "^7.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
 }
