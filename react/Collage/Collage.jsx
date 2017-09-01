@@ -12,13 +12,19 @@ class Collage extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.photos);
+        console.log(this.props.gallery);
     }
 
     renderPhotos() {
-        return this.props.photos.map(function(photo, i) {
+        let that = this;
+
+        return this.props.gallery.photos.map(function(photo, i) {
             return (
-                <span key={i}>{photo.title}</span>
+                <div key={i} className="collage__photo"
+                     onClick={() => that.props.openGallery(i)}>
+                    <span>{photo.title}</span>
+                    <img className="collage__photo__img" src={photo.imageUrl} />
+                </div>
             );
         });
     }
@@ -35,14 +41,14 @@ class Collage extends React.Component {
 
 let mapStateToProps = (store) => {
     return {
-        photos: store.photos,
+        gallery: store.gallery,
     };
 };
 
 let mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        openGallery: () => {
-            dispatch( actions.openGallery() );
+        openGallery: (newPhotoIndex) => {
+            dispatch( actions.openGallery(newPhotoIndex) );
         },
         closeGallery: () => {
             dispatch( actions.closeGallery());

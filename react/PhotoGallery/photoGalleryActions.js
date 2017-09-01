@@ -8,9 +8,9 @@ const types = {
 module.exports = {
     types: types,
 
-    nextPhoto: (channelToPlay) => {
+    nextPhoto: () => {
         return {
-            type: types.PREVIOUS_PHOTO,
+            type: types.NEXT_PHOTO,
         };
     },
 
@@ -20,9 +20,11 @@ module.exports = {
         };
     },
 
-    openGallery: () => {
+    openGallery: (newPhotoIndex) => {
+        console.log(newPhotoIndex);
         return {
             type: types.OPEN_GALLERY,
+            newPhotoIndex: newPhotoIndex,
         };
     },
 
@@ -31,5 +33,4 @@ module.exports = {
             type: types.CLOSE_GALLERY,
         };
     },
-
 };

@@ -1,22 +1,42 @@
-let React = require('react');
-let ReactDOM = require('react-dom');
-let Provider = require('react-redux').Provider;
-let thunk = require('redux-thunk').default;
-let {createStore, applyMiddleware} = require('redux');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const Provider = require('react-redux').Provider;
+const {createStore, applyMiddleware} = require('redux');
 
-let reducers = require('./reducers.js');
+const thunk = require('redux-thunk').default;
+const logger = require('redux-logger').default;
 
-let PhotoGallery = require('./PhotoGallery/PhotoGallery');
-let Collage = require('./Collage/Collage');
+const reducers = require('./reducers.js');
 
-let reactState = {
-    photos: [
-        {title:"photo1"},
-        {title:"photo2"},
-        {title:"photo3"},
-    ],
+const PhotoGallery = require('./PhotoGallery/PhotoGallery');
+const Collage = require('./Collage/Collage');
+
+const reactState = {
+    gallery: {
+        isVisible: false,
+        currentPhotoIndex: 0,
+        photos: [
+            {
+                title: "photo1",
+                imageUrl: "http://www.dobedo.co.uk/wp-content/uploads/2012/10/Frank-in-Belly-T.jpg",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "photo2",
+                imageUrl: "http://dazedimg.dazedgroup.netdna-cdn.com/700/azure/dazed-prod/1100/3/1103574.JPG",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "photo3",
+                imageUrl: "http://dazedimg.dazedgroup.netdna-cdn.com/700/azure/dazed-prod/1090/9/1099010.jpg",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+        ],
+    }
 };
-let store = createStore(reducers, reactState, applyMiddleware(thunk));
+
+// const store = createStore(reducers, reactState, applyMiddleware(thunk));
+const store = createStore(reducers, reactState, applyMiddleware(logger, thunk));
 
 class App extends React.Component {
     render() {

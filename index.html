@@ -38,7 +38,39 @@
 
 <body>
 
-<a id="nts-logo" href="http://www.nts.live" target="_blank"> </a>
+<div id="header">
+    <div class="header__left" >
+        <a id="nts-logo" href="http://www.nts.live" target="_blank"> </a>
+    </div>
+
+    <div class="header__radio-player ">
+        <div class="header__radio-player__handler">
+            <i id="radio-handler-icon" class="fa fa-play" aria-hidden="true"></i>
+            <span style="display: none; visibility: hidden;">
+                <audio id="nts-player-audio"
+                       controls preload="none" type="audio/mpeg"
+                       src=""
+                ></audio>
+            </span>
+
+        </div>
+
+        <div class="header__radio-player__text">
+            <span>LIVE NOW: Mount Kimbie - Love What Survives</span>
+            <i id="live-now-circle" class="fa fa-circle" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    <div class="header__mixcloud-container hidden">
+        <iframe width="100%" height="60" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2FNTSRadio%2Fandrew-weatherall-31st-august-2017%2F&hide_cover=1&mini=1&light=1" frameborder="0"></iframe>
+    </div>
+
+    <div class="header__right">
+        <a href="">Pre-Order</a>
+        <a href="">Pre-Save</a>
+    </div>
+</div>
+
 
 <div id="app"></div>
 

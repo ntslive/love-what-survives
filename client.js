@@ -13,6 +13,21 @@
 ga('create', 'UA-6061419-3', 'auto');
 
 $(document).ready(function() {
-    ga('send', 'pageview', window.location.pathname);
-});
+    // ga('send', 'pageview', window.location.pathname);
 
+    let audioElement = document.getElementById('nts-player-audio');
+    let audioElementHandler = $('#radio-handler-icon');
+
+    audioElementHandler.on('click', function() {
+        if (audioElement.paused === false) {
+            audioElement.removeAttribute("src"); // src value should already be set to default via RadioPlayerReducer
+            audioElement.load();
+            audioElementHandler.removeClass("fa-stop").addClass('fa-play');
+        } else {
+            let time = new Date();
+            audioElement.src = "http://listen.nts.live/stream2?t=" + time.valueOf() ;
+            audioElement.play();
+            audioElementHandler.addClass("fa-stop").removeClass('fa-play');
+        }
+    });
+});

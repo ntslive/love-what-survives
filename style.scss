@@ -1,6 +1,8 @@
 $edge-padding: 20px;
 $text-color: black;
 
+@import "./node_modules/font-awesome/css/font-awesome.min.css";
+
 * {
     font-family: Arial;
 
@@ -34,6 +36,11 @@ a {
     }
 }
 
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
 $logo-size: 40px;
 #nts-logo {
     display: block;
@@ -42,14 +49,6 @@ $logo-size: 40px;
     background-image: url('NTS_LOGO_MASTER.png');
     background-size: $logo-size;
     position: absolute;
-
-    top: $edge-padding;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    -moz-transform: translate(-50%, 0);
-    -ms-transform: translate(-50%, 0);
-    -o-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
 
     &:hover {
         opacity: 0.75;
@@ -60,4 +59,124 @@ $logo-size: 40px;
     -ms-transition: all 0.13s;
     -o-transition: all 0.13s;
     transition: all 0.13s;
+}
+
+/** Header */
+
+#header {
+    position: relative;
+
+    border: 1px solid black;
+    overflow: auto;
+
+    height: 80px;
+
+    #nts-logo {
+        float: left;
+    }
+}
+.header__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.header__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.header__radio-player, .header__mixcloud-container {
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+}
+.header__radio-player {
+
+}
+.header__radio-player__text {
+    display: inline-block;
+}
+.header__radio-player__handler {
+    display: inline-block;
+}
+.header__mixcloud-container {
+
+}
+
+#radio-handler-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+#live-now-circle {
+    color: #d40000;
+    opacity: 0;
+
+    -webkit-animation: flickerAnimation 2s infinite ;
+    -moz-animation: flickerAnimation 2s infinite;
+    -o-animation: flickerAnimation 2s infinite;
+    animation: flickerAnimation 2s infinite;
+}
+
+#nts-player-audio {
+
+}
+
+/** Collage */
+
+.collage__photo {
+    display: inline-block;
+    cursor: pointer;
+}
+.collage__photo__img {
+    max-width: 250px;
+}
+
+
+/** Gallery */
+
+#gallery {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right:0;
+    background-color: rgba(255,255,255,0.9);
+
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery--open {
+    display: block;
+}
+.gallery--closed {
+    display: none;
+}
+
+.gallery__img {
+    display: block;
+    max-height: 70vh;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+/** Animations */
+@keyframes flickerAnimation {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
 }
