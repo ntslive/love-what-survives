@@ -1,0 +1,18 @@
+$side-margin: 20px;
+
+/** Collage */
+#collage {
+    position: fixed;
+    top: 40px; /* FIXME */
+    left: $side-margin; right: $side-margin;
+    bottom: 0;
+}
+.collage__photo {
+    position: absolute;
+    display: inline-block;
+
+    cursor: pointer;
+}
+.collage__photo__img {
+    max-width: 250px;
+}

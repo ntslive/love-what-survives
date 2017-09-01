@@ -11,6 +11,10 @@ class Collage extends React.Component {
         this.state = {}
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        return nextProps.gallery.photos.length !== this.props.gallery.photos.length;
+    }
+
     componentDidMount() {
         console.log(this.props.gallery);
     }
@@ -18,11 +22,40 @@ class Collage extends React.Component {
     renderPhotos() {
         let that = this;
 
+        function randomLeft() {
+            // between -6 & 90
+            return Math.floor(Math.random() * 90) + '%';
+        }
+
+        function randomTop() {
+            // between 0 & 70
+            return Math.floor(Math.random() * 70) + '%';
+        }
+
+        function randomWidth() {
+            // between 35% and 50%
+            return Math.floor(Math.random() * 50) + 35 + "%";
+        }
+
+        function randomRotate() {
+            // between -11% and 11%
+            return Math.floor(Math.random() * 22) - 11 + 'deg';
+        }
+
         return this.props.gallery.photos.map(function(photo, i) {
+            let randomRotation = randomRotate();
+            let positioning = {
+                top: randomTop(),
+                left: randomLeft(),
+                width: randomWidth(),
+
+                '-ms-transform': `rotate(${randomRotation})`,
+                '-webkit-transform': `rotate(${randomRotation})`,
+                'transform': `rotate(${randomRotation})`,
+            };
             return (
-                <div key={i} className="collage__photo"
+                <div key={i} className="collage__photo" style={positioning}
                      onClick={() => that.props.openGallery(i)}>
-                    <span>{photo.title}</span>
                     <img className="collage__photo__img" src={photo.imageUrl} />
                 </div>
             );
@@ -31,8 +64,7 @@ class Collage extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Collage</h2>
+            <div id="collage">
                 {this.renderPhotos()}
             </div>
         )

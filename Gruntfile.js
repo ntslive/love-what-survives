@@ -75,7 +75,7 @@ module.exports = function (grunt) {
          */
         watch: {
             css: {
-                files: ['style.scss'],
+                files: ['style.scss', 'collage.scss'],
                 tasks: ['sass:compile']
             },
             react: {

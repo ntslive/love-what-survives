@@ -2,6 +2,7 @@ $edge-padding: 20px;
 $text-color: black;
 
 @import "./node_modules/font-awesome/css/font-awesome.min.css";
+@import "collage.scss";
 
 * {
     font-family: Arial;
@@ -122,17 +123,6 @@ $logo-size: 40px;
 
 }
 
-/** Collage */
-
-.collage__photo {
-    display: inline-block;
-    cursor: pointer;
-}
-.collage__photo__img {
-    max-width: 250px;
-}
-
-
 /** Gallery */
 
 #gallery {
@@ -143,6 +133,8 @@ $logo-size: 40px;
 
     padding: 40px;
     text-align: center;
+
+    z-index: 999999999;
 }
 
 .gallery--open {
