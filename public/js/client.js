@@ -30,4 +30,6 @@ $(document).ready(function() {
             audioElementHandler.addClass("fa-stop").removeClass('fa-play');
         }
     });
+
+    /** Fabric **/
 });

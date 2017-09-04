@@ -96,8 +96,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('development', ['sass:compile', 'watch']);
+    grunt.registerTask('development', ['sass:compile', 'babel', 'browserify', 'watch']);
 
-    grunt.registerTask('production',  ['sass:compile']);
+    grunt.registerTask('production',  ['sass:compile', 'babel', 'browserify']);
 
 };
