@@ -16,3 +16,10 @@ $side-margin: 20px;
 .collage__photo__img {
     max-width: 250px;
 }
+
+canvas, .canvas-container {
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    left: 0; right: 0;
+}

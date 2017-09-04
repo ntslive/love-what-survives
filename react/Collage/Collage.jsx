@@ -16,7 +16,6 @@ class Collage extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.gallery);
     }
 
     renderPhotos() {
@@ -48,10 +47,7 @@ class Collage extends React.Component {
                 top: randomTop(),
                 left: randomLeft(),
                 width: randomWidth(),
-
-                '-ms-transform': `rotate(${randomRotation})`,
-                '-webkit-transform': `rotate(${randomRotation})`,
-                'transform': `rotate(${randomRotation})`,
+                transform: `rotate(${randomRotation})`,
             };
             return (
                 <div key={i} className="collage__photo" style={positioning}
@@ -62,10 +58,103 @@ class Collage extends React.Component {
         });
     }
 
+    renderCanvasImages() {
+        let that = this;
+
+        function randomLeft() {
+            // between -6% & 80%
+            let max = 0.8;
+            let min = -0.06;
+
+            let widthPercentage = Math.random() * (max - min) + min;
+            return that.canvas.width * widthPercentage;
+        }
+
+        function randomTop() {
+            // between 0% & 40%
+            let max = 0.4;
+            let min = -0.2;
+            let widthPercentage = Math.random() * (max - min) + min;
+            return that.canvas.width * widthPercentage;
+        }
+
+        function randomWidth() {
+            // between 20% & 35%
+            let max = 0.35;
+            let min = 0.2;
+            let widthPercentage = Math.random() * (max - min) + min;
+
+            return that.canvas.width * widthPercentage;
+        }
+
+        function randomRotate() {
+            // between -11% and 11%
+            return (Math.floor(Math.random() * 90) - 45) / 10;
+        }
+
+        for (let i=0; i < this.props.gallery.photos.length; i++) {
+            let photo = this.props.gallery.photos[i];
+
+            fabric.Image.fromURL(photo.imageUrl, function(oImg) {
+                let properties = {
+                    top: randomTop(),
+                    left: randomLeft(),
+                    angle: randomRotate(),
+                    hasControls: false,
+                    hasBorders: false,
+                    hoverCursor: 'pointer',
+                };
+                oImg.set(properties);
+                oImg.scaleToWidth( randomWidth());
+
+                that.canvas.add(oImg);
+            });
+        }
+    }
+
+    handleCanvasEvents() {
+        let that = this;
+
+        let lastClickedLeft;
+
+        this.canvas.on('mouse:down', function(options) {
+            if (options.target) {
+                lastClickedLeft = options.target.left;
+            }
+        });
+        this.canvas.on('mouse:up', function(options) {
+            if (options.target) {
+                if (lastClickedLeft === options.target.left) {
+                    that.props.openGallery(0);
+                }
+            }
+        });
+    }
+
+    renderCanvas() {
+        let that = this;
+        this.canvas = new fabric.Canvas('collage-canvas');
+
+        /** Handle canvas Resizing **/
+        window.addEventListener('resize', resizeCanvas, false);
+
+        function resizeCanvas() {
+            that.canvas.setHeight(window.innerHeight - 40);
+            that.canvas.setWidth(window.innerWidth - 20);
+            that.canvas.renderAll();
+        }
+
+        // resize on init
+        resizeCanvas();
+
+        this.renderCanvasImages();
+        this.handleCanvasEvents();
+    }
+
     render() {
         return (
             <div id="collage">
-                {this.renderPhotos()}
+                {this.renderCanvas()}
             </div>
         )
     }
