@@ -15,7 +15,9 @@ class Collage extends React.Component {
         return nextProps.gallery.photos.length !== this.props.gallery.photos.length;
     }
 
-    componentDidMount() {
+    componentWillUnmount() {
+        this.canvas.clear();
+        window.removeEventListener('resize', this.resizeCanvas);
     }
 
     renderPhotos() {

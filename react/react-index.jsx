@@ -9,6 +9,7 @@ const logger = require('redux-logger').default;
 const reducers = require('./reducers.js');
 
 const PhotoGallery = require('./PhotoGallery/PhotoGallery');
+const PhotoGalleryMobile = require('./PhotoGalleryMobile/PhotoGalleryMobile');
 const Collage = require('./Collage/Collage');
 
 const reactState = {
@@ -38,16 +39,69 @@ const reactState = {
 // const store = createStore(reducers, reactState, applyMiddleware(thunk));
 const store = createStore(reducers, reactState, applyMiddleware(logger, thunk));
 
-class App extends React.Component {
+class DesktopApp extends React.Component {
     render() {
         return (
-            <Provider store={store} >
-                <div>
-                    <PhotoGallery></PhotoGallery>
-                    <Collage></Collage>
-                </div>
-            </Provider>
+            <div>
+                <PhotoGallery></PhotoGallery>
+                <Collage></Collage>
+            </div>
+        );
+    }
+}
+
+class MobileApp extends React.Component {
+    render() {
+        return (
+            <div>
+                <PhotoGalleryMobile> </PhotoGalleryMobile>
+            </div>
         )
+    }
+}
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            windowWidth: window.innerWidth,
+        }
+    }
+
+    componentWillMount() {
+        window.addEventListener('resize', this.handleWindowSizeChange.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleWindowSizeChange.bind(this));
+    }
+
+    handleWindowSizeChange() {
+        this.setState({
+            windowWidth: window.innerWidth
+        });
+    };
+
+    render() {
+        const width = this.state.windowWidth;
+        const isMobile = width <= 500;
+
+        if (isMobile) {
+            console.log("isMobile");
+            return (
+                <Provider store={store} >
+                    <MobileApp> </MobileApp>
+                </Provider>
+            )
+        } else {
+            console.log("isDesktop");
+            return (
+                <Provider store={store} >
+                    <DesktopApp> </DesktopApp>
+                </Provider>
+            )
+        }
     }
 }
 

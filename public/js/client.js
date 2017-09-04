@@ -13,7 +13,7 @@
 ga('create', 'UA-6061419-3', 'auto');
 
 $(document).ready(function() {
-    // ga('send', 'pageview', window.location.pathname);
+    // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
 
     let audioElement = document.getElementById('nts-player-audio');
     let audioElementHandler = $('#radio-handler-icon');
@@ -53,7 +53,6 @@ $(document).ready(function() {
     let endTime = moment().add(7, 'seconds');
     // let startTime = moment.utc("2017-09-04 14:12"); // yyyy-mm-dd
     // let endTime = moment.utc("2017-09-04 14:13"); // yyyy-mm-dd
-
     console.log(startTime.toDate());
     console.log(endTime.toDate());
 
