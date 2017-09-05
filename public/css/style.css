@@ -16,34 +16,34 @@
 .collage__photo__img {
   max-width: 250px; }
 
+#collage-canvas {
+  width: 100%; }
+
 canvas, .canvas-container {
-  position: absolute;
-  top: 20px;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+  position: absolute !important;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px; }
 
 * {
-  font-family: Arial;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   color: black; }
 
+.primary-font {
+  font-family: "Arial Black", Arial !important;
+  word-spacing: 0.5em; }
+
 body {
-  background-color: white; }
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 a {
   color: black;
-  text-decoration: none;
-  -webkit-transition: opacity 0.15s;
-  -moz-transition: opacity 0.15s;
-  -ms-transition: opacity 0.15s;
-  -o-transition: opacity 0.15s;
-  transition: opacity 0.15s; }
-  a:hover {
-    text-decoration: none;
-    opacity: 0.7; }
+  text-decoration: none; }
   a:visited {
     color: black; }
 
@@ -55,7 +55,7 @@ a {
   display: block;
   width: 40px;
   height: 40px;
-  background-image: url("../images/NTS_LOGO_MASTER.png");
+  background-image: url("../img/NTS_LOGO_MASTER.png");
   background-size: 40px;
   position: absolute;
   -webkit-transition: all 0.13s;
@@ -68,33 +68,76 @@ a {
 
 /** Header */
 #header {
-  position: relative;
-  border: 1px solid black;
-  overflow: auto;
-  height: 80px; }
-  #header #nts-logo {
-    float: left; }
-
-.header__left {
   position: absolute;
   top: 0;
-  left: 0; }
+  left: 0;
+  right: 0;
+  height: 80px;
+  padding: 5px;
+  overflow: auto;
+  text-transform: uppercase;
+  z-index: 10; }
+
+.header__left {
+  float: left;
+  widtH: 40px;
+  height: 40px;
+  padding: 9px 10px; }
 
 .header__right {
   position: absolute;
-  top: 0;
-  right: 0; }
+  top: 16px;
+  right: 15px; }
 
 .header__radio-player, .header__mixcloud-container {
-  margin: 0 auto;
-  max-width: 500px;
-  text-align: center; }
+  font-size: 1.2em; }
 
 .header__radio-player__text {
-  display: inline-block; }
+  display: inline-block;
+  margin-top: 17px; }
+  .header__radio-player__text span {
+    color: transparent;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.8); }
 
 .header__radio-player__handler {
   display: inline-block; }
+
+#pre-save-link, #pre-order-link {
+  float: right; }
+  #pre-save-link span, #pre-order-link span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    color: transparent;
+    text-shadow: 0 0 1px rgba(250, 243, 220, 0.8); }
+
+#pre-order-link {
+  position: relative;
+  display: block;
+  width: 151px;
+  height: 39px;
+  background-image: url("../img/tapesmall.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 15px; }
+  #pre-order-link span {
+    transform: translateY(-50%) rotate(0.5deg);
+    padding-bottom: 2px; }
+
+#pre-save-link {
+  position: relative;
+  display: block;
+  width: 142px;
+  height: 39px;
+  background-image: url("../img/tapesmall_alt.png");
+  background-size: contain;
+  background-repeat: no-repeat; }
+  #pre-save-link span {
+    transform: translateY(-50%) rotate(-1deg);
+    padding-right: 7px;
+    padding-bottom: 2px; }
 
 #radio-handler-icon {
   cursor: pointer;
@@ -115,7 +158,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   padding: 40px;
   text-align: center;
   z-index: 999999999; }
@@ -126,11 +169,71 @@ a {
 .gallery--closed {
   display: none; }
 
+.gallery__img-container {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  right: 40px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 .gallery__img {
   display: block;
   max-height: 70vh;
   min-height: 400px;
   margin: 0 auto; }
+
+.gallery__title {
+  margin: 0;
+  margin-top: 16px;
+  font-size: 20px; }
+
+#next-photo-icon, #prev-photo-icon, #close-gallery-icon {
+  cursor: pointer;
+  font-size: 3em; }
+
+#next-photo-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+#prev-photo-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+#close-gallery-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+             supported by Chrome and Opera */ }
 
 /** Animations */
 @keyframes flickerAnimation {
