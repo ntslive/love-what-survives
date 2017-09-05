@@ -18,18 +18,103 @@ const reactState = {
         currentPhotoIndex: 0,
         photos: [
             {
-                title: "photo1",
-                imageUrl: "http://www.dobedo.co.uk/wp-content/uploads/2012/10/Frank-in-Belly-T.jpg",
+                title: "Four Years And One Day",
+                imageUrl: "/public/img/frank/1four_years_and_one_day.png",
                 description: "Frank Lebon - DoBeDo Photographer Series",
             },
             {
-                title: "photo2",
-                imageUrl: "http://dazedimg.dazedgroup.netdna-cdn.com/700/azure/dazed-prod/1100/3/1103574.JPG",
+                title: "Blue Train Lines (feat. King Krule)",
+                imageUrl: "/public/img/frank/2blue_train_lines_feat_king_krule.png",
                 description: "Frank Lebon - DoBeDo Photographer Series",
             },
             {
-                title: "photo3",
-                imageUrl: "http://dazedimg.dazedgroup.netdna-cdn.com/700/azure/dazed-prod/1090/9/1099010.jpg",
+                title: "Audition",
+                imageUrl: "/public/img/frank/3audition.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "Marilyn (feat. Micachu)",
+                imageUrl: "/public/img/frank/4marilyn_feat_micachu.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "SP12 Beat",
+                imageUrl: "/public/img/frank/5SP12_beat.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "You Look Certain (I'm Not So Sure) (feat. Andrea Balency)",
+                imageUrl: "/public/img/frank/6you_look_certain.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "Poison",
+                imageUrl: "/public/img/frank/7poison.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "We Go Home Together",
+                imageUrl: "/public/img/frank/8we_go_home_together.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "Delta",
+                imageUrl: "/public/img/frank/9delta.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "T.A.M.E.D",
+                imageUrl: "/public/img/frank/10T.A.M.E.D.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "How We Got By",
+                imageUrl: "/public/img/frank/11how_we_got_by.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            // {
+            //     title: "Love What Survives",
+            //     imageUrl: "/public/img/frank/love_what_survives.png",
+            //     description: "Frank Lebon - DoBeDo Photographer Series",
+            // },
+            {
+                title: "Love What Survives",
+                imageUrl: "/public/img/frank/love_what_survives_2.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra11.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra12.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra13.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra14.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra15.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/extra21.png",
+                description: "Frank Lebon - DoBeDo Photographer Series",
+            },
+            {
+                title: "",
+                imageUrl: "/public/img/frank/untitled4.png",
                 description: "Frank Lebon - DoBeDo Photographer Series",
             },
         ],
