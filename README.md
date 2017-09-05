@@ -4,16 +4,22 @@ Find Github pages for mini-site [here](https://github.com/ntslive/love-what-surv
 
 Created by [NTS Radio](http://www.nts.live).
 
-## Build
+## Setup
 
-Using Sass, which Grunt will compile via tasks 'production' or 'development', that latter of which will continuously run and watch files.
+You will need [Node.js](https://nodejs.org/en/) and [Sass](http://sass-lang.com/install) installed.
+
+Install the package dependencies: `npm install`.
+
+Copy the pre-commit Git hook, to ensure the assets are compiled before you commit.
 
 ```bash
-npm install
-grunt production
+cp pre-commit .git/hooks/.
 ```
 
-Run local server (http://localhost:3000) with:
-```
-node app.js
+## Build
+
+Using Sass and React, which Grunt will compile via tasks 'production' or 'development', that latter of which will continuously run and watch files.
+
+```bash
+grunt production
 ```

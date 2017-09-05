@@ -1,7 +1,7 @@
 $edge-padding: 20px;
 $text-color: black;
 
-@import "./node_modules/font-awesome/css/font-awesome.min.css";
+@import "./font-awesome.min.css";
 @import "collage.scss";
 
 * {
@@ -47,7 +47,7 @@ $logo-size: 40px;
     display: block;
     width: $logo-size;
     height: $logo-size;
-    background-image: url('NTS_LOGO_MASTER.png');
+    background-image: url('../images/NTS_LOGO_MASTER.png');
     background-size: $logo-size;
     position: absolute;
 
