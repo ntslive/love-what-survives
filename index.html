@@ -50,21 +50,23 @@
     </div>
 
     <div class="header__radio-player ">
+        <div class="header__radio-player__text primary-font">
+            <span id="before-text" class="hidden header-fuzzy-text header-fuzzy-text--dark">Live Radio Broadcast 7th October 15:00</span>
+            <span id="during-text" class="hidden header-fuzzy-text header-fuzzy-text--dark">
+                <i id="live-now-circle" class="fa fa-circle header-fuzzy-text header-fuzzy-text--red" aria-hidden="true"></i>
+                LIVE NOW: Mount Kimbie - Love What Survives
+            </span>
+            <span id="after-text" class="hidden header-fuzzy-text header-fuzzy-text--dark">Listen Back Available Here 8th September</span>
+        </div>
+
         <div class="header__radio-player__handler hidden">
-            <i id="radio-handler-icon" class="fa fa-play" aria-hidden="true"></i>
+            <i id="radio-handler-icon" class="fa fa-play header-fuzzy-text header-fuzzy-text--dark" aria-hidden="true"></i>
             <span style="display: none; visibility: hidden;">
                 <audio id="nts-player-audio"
                        controls preload="none" type="audio/mpeg"
                        src=""
                 ></audio>
             </span>
-        </div>
-
-        <div class="header__radio-player__text primary-font">
-            <span id="before-text" class="hidden">Live Radio Broadcast 7th October 15:00</span>
-            <span id="during-text" class="hidden">LIVE NOW: Mount Kimbie - Love What Survives <i id="live-now-circle" class="fa fa-circle" aria-hidden="true"></i></span>
-            <span id="after-text" class="hidden">Listen Back Available Here 8th September</span>
-
         </div>
     </div>
 
@@ -74,10 +76,10 @@
 
     <div class="header__right primary-font">
         <a id="pre-save-link" href="http://s.warp.net/lws-presave" target="_blank">
-            <span>Pre-Save</span>
+            <span class="header-fuzzy-text">Pre-Save</span>
         </a>
         <a id="pre-order-link" href="http://s.warp.net/mk-survives" target="_blank">
-            <span>Pre-Order</span>
+            <span class="header-fuzzy-text">Pre-Order</span>
         </a>
     </div>
 </div>

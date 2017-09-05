@@ -80,8 +80,8 @@ a {
 
 .header__left {
   float: left;
-  widtH: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   padding: 9px 10px; }
 
 .header__right {
@@ -89,18 +89,20 @@ a {
   top: 16px;
   right: 15px; }
 
+.header__radio-player {
+  cursor: pointer; }
+
 .header__radio-player, .header__mixcloud-container {
   font-size: 1.2em; }
 
 .header__radio-player__text {
   display: inline-block;
-  margin-top: 17px; }
-  .header__radio-player__text span {
-    color: transparent;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.8); }
+  margin-top: 17px;
+  margin-left: 6px; }
 
 .header__radio-player__handler {
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: bottom; }
 
 #pre-save-link, #pre-order-link {
   float: right; }
@@ -109,9 +111,7 @@ a {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-    text-align: center;
-    color: transparent;
-    text-shadow: 0 0 1px rgba(250, 243, 220, 0.8); }
+    text-align: center; }
 
 #pre-order-link {
   position: relative;
@@ -140,8 +140,9 @@ a {
     padding-bottom: 2px; }
 
 #radio-handler-icon {
-  cursor: pointer;
-  font-size: 1.5em; }
+  font-size: 1.3em;
+  margin-left: 11px;
+  margin-top: 2px; }
 
 #live-now-circle {
   color: #d40000;
@@ -219,6 +220,16 @@ a {
   position: absolute;
   top: 10px;
   right: 15px; }
+
+.header-fuzzy-text {
+  color: transparent !important;
+  text-shadow: 0 0 1px rgba(250, 243, 220, 0.8); }
+
+.header-fuzzy-text--dark {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.8); }
+
+.header-fuzzy-text--red {
+  text-shadow: 0 0 1px rgba(212, 0, 0, 0.8); }
 
 .noselect {
   -webkit-touch-callout: none;

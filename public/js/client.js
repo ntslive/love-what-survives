@@ -16,7 +16,8 @@ $(document).ready(function() {
     // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
 
     let audioElement = document.getElementById('nts-player-audio');
-    let audioElementHandler = $('#radio-handler-icon');
+    let audioElementHandler = $('.header__radio-player');
+    let $audioIcon = $('#radio-handler-icon');
     let radioIsPlaying = false;
 
     function stopRadio() {
@@ -24,7 +25,7 @@ $(document).ready(function() {
 
         audioElement.removeAttribute("src"); // src value should already be set to default via RadioPlayerReducer
         audioElement.load();
-        audioElementHandler.removeClass("fa-stop").addClass('fa-play');
+        $audioIcon.removeClass("fa-stop").addClass('fa-play');
 
         radioIsPlaying = false;
     }
@@ -35,7 +36,7 @@ $(document).ready(function() {
         let time = new Date();
         audioElement.src = "http://listen.nts.live/stream2?t=" + time.valueOf() ;
         audioElement.play();
-        audioElementHandler.addClass("fa-stop").removeClass('fa-play');
+        $audioIcon.addClass("fa-stop").removeClass('fa-play');
 
         radioIsPlaying = true;
     }
@@ -50,7 +51,8 @@ $(document).ready(function() {
 
 
     let startTime = moment().add(2, 'seconds');
-    let endTime = moment().add(7, 'seconds');
+    // let endTime = moment().add(7, 'seconds');
+    let endTime = moment().add(200000000, 'seconds');
     // let startTime = moment.utc("2017-09-04 14:12"); // yyyy-mm-dd
     // let endTime = moment.utc("2017-09-04 14:13"); // yyyy-mm-dd
     console.log(startTime.toDate());
