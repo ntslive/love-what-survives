@@ -37,9 +37,11 @@ canvas, .canvas-container {
   word-spacing: 0.5em; }
 
 body {
-  background-image: url("../img/bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 a {
   color: black;
@@ -159,7 +161,11 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: white;
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: 40px;
   text-align: center;
   z-index: 999999999; }
@@ -190,7 +196,8 @@ a {
 .gallery__title {
   margin: 0;
   margin-top: 16px;
-  font-size: 20px; }
+  font-size: 28px;
+  text-transform: uppercase; }
 
 #next-photo-icon, #prev-photo-icon, #close-gallery-icon {
   cursor: pointer;
@@ -199,7 +206,7 @@ a {
 #next-photo-icon {
   position: absolute;
   top: 50%;
-  right: 15px;
+  right: 30px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -209,7 +216,7 @@ a {
 #prev-photo-icon {
   position: absolute;
   top: 50%;
-  left: 15px;
+  left: 30px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -219,8 +226,9 @@ a {
 #close-gallery-icon {
   position: absolute;
   top: 10px;
-  right: 15px; }
+  right: 30px; }
 
+/** Misc **/
 .header-fuzzy-text {
   color: transparent !important;
   text-shadow: 0 0 1px rgba(250, 243, 220, 0.8); }

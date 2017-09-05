@@ -21,9 +21,15 @@ $text-color: black;
 
 body {
 
-    background-image: url('../img/bg.jpg');
+    //background-image: url('../img/bg.jpg');
+    //background-size: cover;
+    //background-repeat: no-repeat;
+
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-repeat: no-repeat;
 }
 
 a {
@@ -101,6 +107,11 @@ $header-padding: 5px;
 }
 .header__radio-player {
     cursor: pointer;
+
+    //background-image: url("../img/tapevlarge.png");
+    //background-size: contain;
+    //background-repeat: no-repeat;
+
 }
 .header__radio-player, .header__mixcloud-container {
     //margin: 0 auto;
@@ -191,7 +202,12 @@ $side-padding: 40px;
     position: absolute;
     top: 0; bottom: 0;
     left: 0; right:0;
-    background-color: rgba(255,255,255,1);
+
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
     padding: $side-padding;
     text-align: center;
@@ -227,7 +243,8 @@ $side-padding: 40px;
 .gallery__title {
     margin: 0;
     margin-top: 16px;
-    font-size: 20px;
+    font-size: 28px;
+    text-transform: uppercase;
 }
 
 #next-photo-icon, #prev-photo-icon, #close-gallery-icon {
@@ -235,7 +252,7 @@ $side-padding: 40px;
     font-size: 3em;
 }
 
-$gallery-side-icon-spacing: 15px;
+$gallery-side-icon-spacing: 30px;
 #next-photo-icon {
     position: absolute;
     top: 50%;
@@ -262,6 +279,10 @@ $gallery-side-icon-spacing: 15px;
     right: $gallery-side-icon-spacing;
 }
 
+
+
+/** Misc **/
+
 .header-fuzzy-text {
     color: transparent !important;
     text-shadow: 0 0 1px rgba(250, 243, 220, 0.8);
@@ -272,8 +293,6 @@ $gallery-side-icon-spacing: 15px;
 .header-fuzzy-text--red {
     text-shadow: 0 0 1px rgba(212, 0, 0, 0.8);
 }
-
-
 
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
