@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                     style: 'nested'
                 },
                 files: {
-                    'style.css': 'style.scss'
+                    'public/css/style.css': 'style.scss'
                 }
             }
         },
@@ -88,16 +88,26 @@ module.exports = function (grunt) {
                     reload: true
                 }
             }
-        }
+        },
+
+        copy: {
+            fontawesome: {
+                nonull: true,
+                expand: true,
+                cwd: 'node_modules/font-awesome/',
+                src: ['fonts/**', 'css/**'],
+                dest: 'public'
+            },
+        },
     });
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
-    grunt.registerTask('development', ['sass:compile', 'babel', 'browserify', 'watch']);
-
-    grunt.registerTask('production',  ['sass:compile', 'babel', 'browserify']);
+    grunt.registerTask('production',  ['copy:fontawesome', 'sass:compile',  'babel', 'browserify']);
+    grunt.registerTask('development', ['production', 'watch']);
 
 };
