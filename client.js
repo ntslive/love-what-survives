@@ -16,6 +16,11 @@ function setupRadioPlayer() {
     const width = window.innerWidth;
     const isMobile = width <= 767;
 
+    // let startTime = moment().add(2, 'seconds');
+    // let endTime = moment().add(7, 'seconds');
+    let startTime = moment.utc("2017-09-07 17:00"); // yyyy-mm-dd
+    let endTime = moment.utc("2017-09-07 18:00"); // yyyy-mm-dd
+
     let audioElement = document.getElementById('nts-player-audio');
     let radioIsPlaying = false;
     let audioElementHandler, $audioIcon, $beforeEl, $duringEl, $radioHandler, $afterEl;
@@ -59,18 +64,15 @@ function setupRadioPlayer() {
     }
 
     audioElementHandler.on('click', function() {
-        if (radioIsPlaying) {
-            stopRadio();
-        } else {
-            playRadio();
+        let now = moment.utc();
+        if (now > startTime && now < endTime) {
+            if (radioIsPlaying) {
+                stopRadio();
+            } else {
+                playRadio();
+            }
         }
     });
-
-
-    // let startTime = moment().add(2, 'seconds');
-    // let endTime = moment().add(7, 'seconds');
-    let startTime = moment.utc("2017-09-07 17:00"); // yyyy-mm-dd
-    let endTime = moment.utc("2017-09-07 18:00"); // yyyy-mm-dd
 
     let autoplayed = false; // Only autoplay once (don't want to autoplay after it's been actively paused.
     function handleRadioTextDisplay() {
@@ -81,6 +83,7 @@ function setupRadioPlayer() {
         } else if (now < endTime) {
             $beforeEl.addClass("hidden");
             $radioHandler.removeClass("hidden");
+            audioElementHandler.addClass("cursor-pointer");
             $duringEl.removeClass("hidden");
 
             if (!autoplayed) playRadio();
@@ -88,6 +91,7 @@ function setupRadioPlayer() {
         } else {
             $beforeEl.addClass("hidden");
             $radioHandler.addClass("hidden");
+            audioElementHandler.removeClass("cursor-pointer");
             $duringEl.addClass("hidden");
             $afterEl.removeClass('hidden');
 

@@ -98,7 +98,6 @@ $header-padding: 5px;
     right: 15px;
 }
 .header__radio-player {
-    cursor: pointer;
 }
 .header__radio-player, .header__mixcloud-container {
     font-size: 1.2em;
@@ -392,6 +391,10 @@ img {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 /** Animations */
