@@ -1,7 +1,7 @@
 $edge-padding: 20px;
 $text-color: black;
 
-@import "./font-awesome.min.css";
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 @import "collage.scss";
 
 * {
