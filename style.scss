@@ -19,13 +19,14 @@ $text-color: black;
     word-spacing: 0.5em;
 }
 
-body {
-}
-
 #bg {
+    display: block;
     position: fixed;
     top: 0; bottom: 0;
     left: 0; right: 0;
+
+    z-index: -1;
+
     background: url('../img/bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -98,16 +99,8 @@ $header-padding: 5px;
 }
 .header__radio-player {
     cursor: pointer;
-
-    //background-image: url("../img/tapevlarge.png");
-    //background-size: contain;
-    //background-repeat: no-repeat;
-
 }
 .header__radio-player, .header__mixcloud-container {
-    //margin: 0 auto;
-    //max-width: 600px;
-    //text-align: center;
     font-size: 1.2em;
 }
 .header__radio-player__text {
@@ -353,12 +346,8 @@ img {
 
 @media #{$mq-phone} {
     #bg {
-        z-index: -1;
-        background: url('../img/bg_mobile.jpg') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+        position: fixed;
+        background: url('../img/bg_mobile.jpg') no-repeat top left local;
     }
     #collage-canvas {
         display: none;
@@ -381,7 +370,6 @@ img {
         }
     }
 }
-
 
 /** Misc **/
 
