@@ -72,10 +72,10 @@ module.exports = function (grunt) {
         sass: {
             compile: {
                 options: {
-                    style: 'nested'
+                    style: 'compressed'
                 },
                 files: {
-                    'public/css/style.css': 'style.scss'
+                    'public/css/style.min.css': 'style.scss'
                 }
             }
         },
@@ -125,7 +125,7 @@ module.exports = function (grunt) {
                 nonull: true,
                 expand: true,
                 cwd: 'node_modules/font-awesome/',
-                src: ['fonts/**', 'css/**'],
+                src: ['fonts/**'],
                 dest: 'public'
             },
         },
