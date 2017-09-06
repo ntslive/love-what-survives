@@ -109,7 +109,7 @@ module.exports = function (grunt) {
                 tasks: ['sass:compile']
             },
             react: {
-                files: ['react/*.jsx', 'react/**/*.jsx', 'react/**/*.js'],
+                files: ['react/*.jsx', 'react/**/*.jsx', 'react/**/*.js', 'client.js'],
                 tasks: ['babel', 'browserify', 'uglify'],
             },
             configFiles: {
