@@ -1,0 +1,19 @@
+{
+    "name": "NTS",
+    "icons": [
+        {
+            "src": "https://www.nts.live/android-chrome-192x192.png?v=47rE43RRzB",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://www.nts.live/android-chrome-512x512.png?v=47rE43RRzB",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "display": "standalone",
+    "orientation": "portrait"
+}
