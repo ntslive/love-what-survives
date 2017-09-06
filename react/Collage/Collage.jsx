@@ -105,6 +105,7 @@ class Collage extends React.Component {
                     hasControls: false,
                     hasBorders: false,
                     hoverCursor: 'pointer',
+                    galleryIndex: i,
                 };
                 oImg.set(properties);
                 oImg.scaleToWidth( randomWidth());
@@ -127,7 +128,7 @@ class Collage extends React.Component {
         this.canvas.on('mouse:up', function(options) {
             if (options.target) {
                 if (lastClickedLeft === options.target.left) {
-                    that.props.openGallery(0);
+                    that.props.openGallery(options.target.galleryIndex);
                 }
             }
         });
