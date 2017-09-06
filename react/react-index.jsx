@@ -176,7 +176,7 @@ class App extends React.Component {
 
     render() {
         const width = this.state.windowWidth;
-        const isMobile = width <= 500;
+        const isMobile = width <= 767;
 
         if (isMobile) {
             console.log("isMobile");

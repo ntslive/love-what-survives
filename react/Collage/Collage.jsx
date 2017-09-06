@@ -104,7 +104,7 @@ class Collage extends React.Component {
         window.addEventListener('resize', resizeCanvas, false);
 
         function resizeCanvas() {
-            if (window.innerWidth <= 500) return;
+            if (window.innerWidth <= 767) return;
 
             that.canvas.setHeight(window.innerHeight);
             that.canvas.setWidth(window.innerWidth);

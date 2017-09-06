@@ -14,7 +14,7 @@ ga('create', 'UA-6061419-3', 'auto');
 
 function setupRadioPlayer() {
     const width = window.innerWidth;
-    const isMobile = width <= 500;
+    const isMobile = width <= 767;
 
     let audioElement = document.getElementById('nts-player-audio');
     let radioIsPlaying = false;
@@ -103,9 +103,13 @@ function setupRadioPlayer() {
     setInterval(handleRadioTextDisplay, 5000);
 }
 
-
 $(document).ready(function() {
     // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
 
     setupRadioPlayer();
+
+    const isMobile = window.innerWidth <= 767;
+    if (isMobile) {
+        $('canvas').remove();
+    }
 });
