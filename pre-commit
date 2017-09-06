@@ -1,4 +1,4 @@
 #!/bin/sh
 #
-grunt production
+NODE_ENV=production grunt production
 git add public/.
