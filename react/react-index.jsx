@@ -179,14 +179,12 @@ class App extends React.Component {
         const isMobile = width <= 767;
 
         if (isMobile) {
-            console.log("isMobile");
             return (
                 <Provider store={store} >
                     <MobileApp> </MobileApp>
                 </Provider>
             )
         } else {
-            console.log("isDesktop");
             return (
                 <Provider store={store} >
                     <DesktopApp> </DesktopApp>

@@ -71,8 +71,6 @@ function setupRadioPlayer() {
     // let endTime = moment().add(7, 'seconds');
     let startTime = moment.utc("2017-09-07 17:00"); // yyyy-mm-dd
     let endTime = moment.utc("2017-09-07 18:00"); // yyyy-mm-dd
-    console.log(startTime.toDate());
-    console.log(endTime.toDate());
 
     let autoplayed = false; // Only autoplay once (don't want to autoplay after it's been actively paused.
     function handleRadioTextDisplay() {

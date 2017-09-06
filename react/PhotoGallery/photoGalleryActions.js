@@ -21,7 +21,6 @@ module.exports = {
     },
 
     openGallery: (newPhotoIndex) => {
-        console.log(newPhotoIndex);
         return {
             type: types.OPEN_GALLERY,
             newPhotoIndex: newPhotoIndex,

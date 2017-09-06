@@ -12,7 +12,7 @@ class PhotoGallery extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.gallery);
+        // console.log(this.props.gallery);
     }
 
     render() {

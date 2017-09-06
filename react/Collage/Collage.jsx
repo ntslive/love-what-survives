@@ -95,7 +95,6 @@ class Collage extends React.Component {
     }
 
     renderCanvas() {
-        console.log("rendering canvas");
         let that = this;
         $()
         this.canvas = new fabric.Canvas('collage-canvas');

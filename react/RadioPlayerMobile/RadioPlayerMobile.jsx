@@ -12,7 +12,7 @@ class RadioPlayerMobile extends React.Component {
     }
 
     componentDidMount() {
-        console.log("Mounting mobile radio player.");
+        // console.log("Mounting mobile radio player.");
     }
 
     componentWillUnmount() {
