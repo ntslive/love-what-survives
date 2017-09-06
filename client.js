@@ -12,13 +12,30 @@
 
 ga('create', 'UA-6061419-3', 'auto');
 
-$(document).ready(function() {
-    // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
+function setupRadioPlayer() {
+    const width = window.innerWidth;
+    const isMobile = width <= 500;
 
     let audioElement = document.getElementById('nts-player-audio');
-    let audioElementHandler = $('.header__radio-player');
-    let $audioIcon = $('#radio-handler-icon');
     let radioIsPlaying = false;
+    let audioElementHandler, $audioIcon, $beforeEl, $duringEl, $radioHandler, $afterEl;
+    if (isMobile) {
+        audioElementHandler = $('#mobile-radio-player');
+        $audioIcon = $('#radio-handler-icon-mobile');
+
+        $beforeEl = $('#before-text-mobile');
+        $duringEl = $('#during-text-mobile');
+        $radioHandler = $('#header__radio-player__handler--mobile');
+        $afterEl = $('#after-text-mobile');
+    } else {
+        audioElementHandler = $('.header__radio-player');
+        $audioIcon = $('#radio-handler-icon-desktop');
+
+        $beforeEl = $('#before-text');
+        $duringEl = $('#during-text');
+        $radioHandler = $('#header__radio-player__handler--desktop');
+        $afterEl = $('#after-text');
+    }
 
     function stopRadio() {
         if (!radioIsPlaying) return;
@@ -51,17 +68,13 @@ $(document).ready(function() {
 
 
     let startTime = moment().add(2, 'seconds');
-    // let endTime = moment().add(7, 'seconds');
-    let endTime = moment().add(2000000, 'seconds');
+    let endTime = moment().add(7, 'seconds');
+    // let endTime = moment().add(2000000, 'seconds');
     // let startTime = moment.utc("2017-09-04 14:12"); // yyyy-mm-dd
     // let endTime = moment.utc("2017-09-04 14:13"); // yyyy-mm-dd
-    console.log(startTime.toDate());
-    console.log(endTime.toDate());
+    // console.log(startTime.toDate());
+    // console.log(endTime.toDate());
 
-    let $beforeEl = $('#before-text');
-    let $duringEl = $('#during-text');
-    let $radioHandler = $('.header__radio-player__handler');
-    let $afterEl = $('#after-text');
 
     let autoplayed = false; // Only autoplay once (don't want to autoplay after it's been actively paused.
     function handleRadioTextDisplay() {
@@ -88,4 +101,11 @@ $(document).ready(function() {
 
     handleRadioTextDisplay();
     setInterval(handleRadioTextDisplay, 5000);
+}
+
+
+$(document).ready(function() {
+    // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
+
+    setupRadioPlayer();
 });

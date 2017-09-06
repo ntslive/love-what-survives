@@ -12,7 +12,6 @@ class PhotoGalleryMobile extends React.Component {
     }
 
     renderPhoto(photo, i) {
-        console.log("rendering photo");
         return (
             <div className="gallery-mobile__item" key={i}>
                 <img className="gallery-mobile__img" src={photo.imageUrl} />

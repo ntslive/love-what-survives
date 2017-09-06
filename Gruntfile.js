@@ -110,7 +110,7 @@ module.exports = function (grunt) {
             },
             react: {
                 files: ['react/*.jsx', 'react/**/*.jsx', 'react/**/*.js'],
-                tasks: ['babel', 'browserify'],
+                tasks: ['babel', 'browserify', 'uglify'],
             },
             configFiles: {
                 files: ['Gruntfile.js'],

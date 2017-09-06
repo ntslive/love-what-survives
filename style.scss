@@ -173,7 +173,7 @@ $header-padding: 5px;
     }
 }
 
-#radio-handler-icon {
+.radio-handler-icon {
     font-size: 1.3em;
     margin-left: 11px;
     margin-top: 2px;
@@ -281,8 +281,8 @@ $mq-desktop: "(min-width: 1025px) and (max-width: 1499px)";
 $mq-lg-desktop: "(min-width: 1500px)";
 $mq-md-desktop: "(min-width: 1190px) and (max-width: 1499px)";
 $mq-sm-desktop: "(min-width: 1025px) and (max-width: 1190px)";
-$mq-tablet: "(min-width: 768px) and (max-width: 1024px)";
-$mq-phone: "(max-width: 767px)";
+$mq-tablet: "(min-width: 500px) and (max-width: 1024px)";
+$mq-phone: "(max-width: 500px)";
 
 img {
     max-width: 100%;
@@ -359,8 +359,10 @@ img {
     #collage-canvas {
         display: none;
     }
+    #header {
+        display: none;
+    }
 }
-
 
 
 /** Misc **/
