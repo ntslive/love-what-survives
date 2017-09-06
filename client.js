@@ -104,7 +104,7 @@ function setupRadioPlayer() {
 }
 
 $(document).ready(function() {
-    // ga('send', 'pageview', window.location.pathname); // FIXME unncomment for live!!!
+    ga('send', 'pageview', window.location.pathname);
 
     setupRadioPlayer();
 
