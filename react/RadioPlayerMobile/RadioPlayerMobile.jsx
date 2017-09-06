@@ -55,7 +55,7 @@ class RadioPlayerMobile extends React.Component {
                                 <div className="header-fuzzy-text header-fuzzy-text--dark">Live Radio Broadcast</div>
                                 <div className="header-fuzzy-text header-fuzzy-text--dark" style={{'marginTop': '0px'}}>Mount Kimbie</div>
                                 <div className="header-fuzzy-text header-fuzzy-text--dark" style={{'marginBottom': '8px'}}>Love What Survives</div>
-                                <div className="header-fuzzy-text header-fuzzy-text--dark">7th October 18:00 BST</div>
+                                <div className="header-fuzzy-text header-fuzzy-text--dark">7th September 18:00 BST</div>
                             </span>
                             <span id="during-text-mobile" className="hidden">
                                 <div className="live-now-label header-fuzzy-text header-fuzzy-text--dark">
