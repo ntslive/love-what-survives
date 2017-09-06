@@ -62,6 +62,10 @@ module.exports = function (grunt) {
             },
         },
 
+        checkDependencies: {
+            this: {},
+        },
+
         /**
          * Converts our Sass files to CSS.
          */
@@ -127,14 +131,15 @@ module.exports = function (grunt) {
         },
     });
 
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-check-dependencies');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('production',  ['copy:fontawesome', 'sass:compile',  'babel', 'browserify', 'uglify']);
+    grunt.registerTask('production',  ['checkDependencies', 'copy:fontawesome', 'sass:compile',  'babel', 'browserify', 'uglify']);
     grunt.registerTask('development', ['production', 'watch']);
 
 };
