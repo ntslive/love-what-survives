@@ -33,10 +33,10 @@ class Collage extends React.Component {
         }
 
         function randomTop() {
-            // between 0% & 40%
-            let max = 0.6;
-            let min = -0.1;
-            let widthPercentage = Math.random() * (max - min) + min;
+            // between 2% & 40%
+            let max = 0.40;
+            let min = 0.02;
+            let widthPercentage = (Math.random() * (max - min)) + min;
             return that.canvas.width * widthPercentage;
         }
 
@@ -44,7 +44,7 @@ class Collage extends React.Component {
             // between 20% & 35%
             let max = 0.35;
             let min = 0.2;
-            let widthPercentage = Math.random() * (max - min) + min;
+            let widthPercentage = (Math.random() * (max - min)) + min;
 
             return that.canvas.width * widthPercentage;
         }
