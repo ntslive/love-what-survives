@@ -107,7 +107,9 @@ a {
   vertical-align: bottom; }
 
 #pre-save-link, #pre-order-link {
-  float: right; }
+  float: right;
+  text-transform: uppercase;
+  text-align: left; }
   #pre-save-link span, #pre-order-link span {
     position: absolute;
     top: 50%;
@@ -228,6 +230,65 @@ a {
   top: 10px;
   right: 30px; }
 
+/** Mobile */
+img {
+  max-width: 100%; }
+
+.gallery-mobile__item {
+  margin: 60px 0;
+  text-align: center; }
+  .gallery-mobile__item img {
+    margin: 0 auto; }
+  .gallery-mobile__item span {
+    text-transform: uppercase; }
+
+#radio-player-mobile {
+  position: relative;
+  height: 97vh;
+  text-align: center; }
+  #radio-player-mobile .header__radio-player {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0; }
+    #radio-player-mobile .header__radio-player .header__radio-player__text {
+      margin-top: 0;
+      margin-left: 0; }
+    #radio-player-mobile .header__radio-player .header__radio-player__handler {
+      display: block;
+      margin-bottom: 12px; }
+    #radio-player-mobile .header__radio-player #live-now-circle {
+      margin-left: 11px; }
+    #radio-player-mobile .header__radio-player .live-now-label {
+      padding-left: 35px; }
+
+.radio-player-mobile__logo {
+  text-align: center;
+  padding-top: 4vh;
+  padding-bottom: 20px; }
+  .radio-player-mobile__logo #nts-logo {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto; }
+
+.radio-player-mobile__links {
+  margin: 0 auto;
+  text-align: center;
+  overflow: auto; }
+  .radio-player-mobile__links > div {
+    display: inline-block; }
+
+#radio-player-mobile__down-arrow {
+  position: absolute;
+  width: 100%;
+  font-size: 20px;
+  bottom: 5px;
+  text-align: center; }
+
+@media (max-width: 767px) {
+  #collage-canvas {
+    display: none; } }
 /** Misc **/
 .header-fuzzy-text {
   color: transparent !important;

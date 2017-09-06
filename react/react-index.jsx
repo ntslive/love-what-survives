@@ -10,6 +10,7 @@ const reducers = require('./reducers.js');
 
 const PhotoGallery = require('./PhotoGallery/PhotoGallery');
 const PhotoGalleryMobile = require('./PhotoGalleryMobile/PhotoGalleryMobile');
+const RadioPlayerMobile = require('./RadioPlayerMobile/RadioPlayerMobile');
 const Collage = require('./Collage/Collage');
 
 const reactState = {
@@ -139,6 +140,7 @@ class MobileApp extends React.Component {
     render() {
         return (
             <div>
+                <RadioPlayerMobile> </RadioPlayerMobile>
                 <PhotoGalleryMobile> </PhotoGalleryMobile>
             </div>
         )

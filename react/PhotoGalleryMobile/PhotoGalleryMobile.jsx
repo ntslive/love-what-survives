@@ -14,9 +14,9 @@ class PhotoGalleryMobile extends React.Component {
     renderPhoto(photo, i) {
         console.log("rendering photo");
         return (
-            <div key={i}>
-                <span>{photo.title}</span>
+            <div className="gallery-mobile__item" key={i}>
                 <img className="gallery-mobile__img" src={photo.imageUrl} />
+                <span className="primary-font header-fuzzy-text--dark">{photo.title}</span>
             </div>
         )
     }
@@ -24,7 +24,6 @@ class PhotoGalleryMobile extends React.Component {
     render() {
         return (
             <div id="gallery-mobile" className=''>
-                <h2>Photo Gallery</h2>
                 {
                     this.props.gallery.photos.map(this.renderPhoto)
                 }

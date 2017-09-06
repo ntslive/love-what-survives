@@ -20,46 +20,6 @@ class Collage extends React.Component {
         window.removeEventListener('resize', this.resizeCanvas);
     }
 
-    renderPhotos() {
-        let that = this;
-
-        function randomLeft() {
-            // between -6 & 90
-            return Math.floor(Math.random() * 90) + '%';
-        }
-
-        function randomTop() {
-            // between 0 & 70
-            return Math.floor(Math.random() * 70) + '%';
-        }
-
-        function randomWidth() {
-            // between 35% and 50%
-            return Math.floor(Math.random() * 50) + 35 + "%";
-        }
-
-        function randomRotate() {
-            // between -11% and 11%
-            return Math.floor(Math.random() * 22) - 11 + 'deg';
-        }
-
-        return this.props.gallery.photos.map(function(photo, i) {
-            let randomRotation = randomRotate();
-            let positioning = {
-                top: randomTop(),
-                left: randomLeft(),
-                width: randomWidth(),
-                transform: `rotate(${randomRotation})`,
-            };
-            return (
-                <div key={i} className="collage__photo" style={positioning}
-                     onClick={() => that.props.openGallery(i)}>
-                    <img className="collage__photo__img" src={photo.imageUrl} />
-                </div>
-            );
-        });
-    }
-
     renderCanvasImages() {
         let that = this;
 
@@ -135,6 +95,7 @@ class Collage extends React.Component {
     }
 
     renderCanvas() {
+        console.log("rendering canvas");
         let that = this;
         this.canvas = new fabric.Canvas('collage-canvas');
 
@@ -142,6 +103,8 @@ class Collage extends React.Component {
         window.addEventListener('resize', resizeCanvas, false);
 
         function resizeCanvas() {
+            if (window.innerWidth <= 500) return;
+
             that.canvas.setHeight(window.innerHeight);
             that.canvas.setWidth(window.innerWidth);
             that.canvas.renderAll();
