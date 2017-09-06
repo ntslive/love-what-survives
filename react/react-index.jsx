@@ -134,7 +134,7 @@ class DesktopApp extends React.Component {
         return (
             <div>
                 <PhotoGallery></PhotoGallery>
-                <Collage></Collage>
+                {/*<Collage></Collage>*/}
             </div>
         );
     }
