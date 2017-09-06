@@ -5,11 +5,11 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         babel: {
-            options: {
-                plugins: ['transform-react-jsx'],
-                presets: ['es2015', 'react']
-            },
             jsx: {
+                options: {
+                    plugins: ['transform-react-jsx'],
+                    presets: ['es2015', 'react']
+                },
                 files: [{
                     expand: true,
                     cwd: 'react/',
@@ -20,7 +20,19 @@ module.exports = function (grunt) {
                     dest: 'react_compiled/',
                     ext: '.js',
                 }],
-            }
+            },
+            /**
+             * Transform ES6 JS files into ES5.
+             */
+            es6: {
+                options: {
+                    sourceMap: true,
+                    presets: ['es2015'],
+                },
+                files: {
+                    "client-es2015.js": "client.js",
+                },
+            },
         },
 
         /**
@@ -38,7 +50,7 @@ module.exports = function (grunt) {
             },
             bundle: {
                 files: {
-                    'public/js/react-bundle.js': [
+                    'react-bundle.js': [
                         'react_compiled/**/*.js',
                     ],
                 },
@@ -62,6 +74,20 @@ module.exports = function (grunt) {
                     'public/css/style.css': 'style.scss'
                 }
             }
+        },
+
+        /**
+         * Minifies referenced files
+         */
+        uglify: {
+            my_target: {
+                options: {
+                    sourceMap: true,
+                },
+                files: {
+                    'public/js/app.min.js': ['react-bundle.js', 'client-es2015.js'],
+                },
+            },
         },
 
 
@@ -106,8 +132,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('production',  ['copy:fontawesome', 'sass:compile',  'babel', 'browserify']);
+    grunt.registerTask('production',  ['copy:fontawesome', 'sass:compile',  'babel', 'browserify', 'uglify']);
     grunt.registerTask('development', ['production', 'watch']);
 
 };
