@@ -97,6 +97,7 @@ class Collage extends React.Component {
     renderCanvas() {
         console.log("rendering canvas");
         let that = this;
+        $()
         this.canvas = new fabric.Canvas('collage-canvas');
 
         /** Handle canvas Resizing **/
@@ -120,6 +121,8 @@ class Collage extends React.Component {
     render() {
         return (
             <div id="collage">
+                <canvas id="collage-canvas" > </canvas>
+
                 {this.renderCanvas()}
             </div>
         )

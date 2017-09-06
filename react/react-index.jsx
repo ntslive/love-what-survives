@@ -126,6 +126,10 @@ const reactState = {
 const store = createStore(reducers, reactState, applyMiddleware(logger, thunk));
 
 class DesktopApp extends React.Component {
+    componentWillMount() {
+        $('body').append('<canvas id="collage-canvas"></canvas>');
+    }
+
     render() {
         return (
             <div>
