@@ -1,22 +1,11 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const {connect} = require('react-redux');
-
-const actions = require('../PhotoGallery/photoGalleryActions.js');
 
 class RadioPlayerMobile extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {}
-    }
-
-    componentDidMount() {
-        // console.log("Mounting mobile radio player.");
-    }
-
-    componentWillUnmount() {
-
     }
 
     render() {
@@ -42,12 +31,6 @@ class RadioPlayerMobile extends React.Component {
                         <div id="header__radio-player__handler--mobile" className="header__radio-player__handler hidden">
                             <i id="radio-handler-icon-mobile" className="radio-handler-icon fa fa-play header-fuzzy-text header-fuzzy-text--dark"
                                aria-hidden="true"> </i>
-                            {/*<span style={{display: 'none', visibility: 'hidden'}}>*/}
-                                {/*<audio id="nts-player-audio"*/}
-                                       {/*controls preload="none" type="audio/mpeg"*/}
-                                       {/*src=""*/}
-                                {/*> </audio>*/}
-                            {/*</span>*/}
                         </div>
 
                         <div className="header__radio-player__text primary-font">

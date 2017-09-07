@@ -56,7 +56,7 @@ function setupRadioPlayer() {
         if (radioIsPlaying) return;
 
         let time = new Date();
-        audioElement.src = "http://stream-relay-geo.ntslive.net/stream2?t=" + time.valueOf() ;
+        audioElement.src = "http://stream-relay-geo.ntslive.net/stream?t=" + time.valueOf() ;
         audioElement.play();
         $audioIcon.addClass("fa-stop").removeClass('fa-play');
 
