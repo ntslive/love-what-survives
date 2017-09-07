@@ -57,6 +57,8 @@ $logo-size: 40px;
     background-size: $logo-size;
     position: absolute;
 
+    box-shadow: 0px 0px 2px 1px #282a2d;
+
     &:hover {
         opacity: 0.75;
     }
