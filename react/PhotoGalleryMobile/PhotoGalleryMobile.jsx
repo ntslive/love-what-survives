@@ -15,7 +15,7 @@ class PhotoGalleryMobile extends React.Component {
         return (
             <div className="gallery-mobile__item" key={i}>
                 <img className="gallery-mobile__img" src={photo.imageUrl} />
-                <span className="primary-font header-fuzzy-text--dark">{photo.title}</span>
+                <span className="primary-font header-fuzzy-text header-fuzzy-text--dark">{photo.title}</span>
             </div>
         )
     }
