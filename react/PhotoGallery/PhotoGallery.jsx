@@ -12,7 +12,30 @@ class PhotoGallery extends React.Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.gallery);
+        $(document.body).on('keydown', this.handleKeyDown.bind(this));
+    }
+
+    componentWillUnmount() {
+        $(document.body).off('keydown', this.handleKeyDown.bind(this));
+    }
+
+    handleKeyDown(e) {
+        // let that = this;
+        if (!this.props.gallery.isVisible) return;
+
+        switch(e.which) {
+            case 37: // left
+                this.props.previousPhoto();
+                break;
+
+            case 39: // right
+                this.props.nextPhoto();
+                break;
+
+            default: return; // exit this handler for other keys
+        }
+
+        e.preventDefault(); // prevent the default action (scroll / move caret)
     }
 
     render() {
