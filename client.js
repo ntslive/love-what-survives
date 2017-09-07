@@ -75,19 +75,28 @@ function setupRadioPlayer() {
     });
 
     let autoplayed = false; // Only autoplay once (don't want to autoplay after it's been actively paused.
+    let startedEllipsis = false;
     function handleRadioTextDisplay() {
         let now = moment.utc();
 
         if (now < startTime) {
             $beforeEl.removeClass("hidden");
+
+            if (!startedEllipsis) {
+                setupMovingEllipsis();
+                startedEllipsis = true;
+            }
         } else if (now < endTime) {
             $beforeEl.addClass("hidden");
             $radioHandler.removeClass("hidden");
             audioElementHandler.addClass("cursor-pointer");
             $duringEl.removeClass("hidden");
 
-            if (!autoplayed) playRadio();
-            autoplayed = true;
+            if (!autoplayed) {
+                playRadio();
+                autoplayed = true;
+                $(document).trigger("breakEllipsisInterval");
+            }
         } else {
             $beforeEl.addClass("hidden");
             $radioHandler.addClass("hidden");
@@ -102,6 +111,31 @@ function setupRadioPlayer() {
     handleRadioTextDisplay();
     setInterval(handleRadioTextDisplay, 5000);
 }
+
+function setupMovingEllipsis() {
+    let $ellipsisEl = $('#ellipsis');
+    let i = 0;
+    function handleMovingEllipsis() {
+        if (i === 3) {
+            i = 0;
+        } else {
+            i++;
+        }
+
+        let text = "";
+        for (let j=0; j<i; j++) {
+            text += '.';
+        }
+
+        $ellipsisEl.text(text);
+    }
+    let ellipsisInterval = setInterval(handleMovingEllipsis, 1000);
+
+    $(document).on('breakEllipsisInterval', function() {
+        window.clearInterval(ellipsisInterval);
+    });
+}
+
 
 $(document).ready(function() {
     ga('send', 'pageview', window.location.pathname);
