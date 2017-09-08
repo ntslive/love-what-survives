@@ -50,8 +50,7 @@ class RadioPlayerMobile extends React.Component {
                                 <div className="header-fuzzy-text header-fuzzy-text--dark">Love What Survives</div>
                             </span>
                             <span id="after-text-mobile" className="hidden">
-                                <div className="header-fuzzy-text header-fuzzy-text--dark">Listen Back Available Here</div>
-                                <div className="header-fuzzy-text header-fuzzy-text--dark">8th September</div>
+                                <iframe width="100%" height="" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2FNTSRadio%2Fmount-kimbie-7th-september-2017%2F&hide_cover=1&light=1" frameborder="0"></iframe>
                             </span>
                         </div>
                     </div>

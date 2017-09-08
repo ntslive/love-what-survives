@@ -44,8 +44,8 @@ a {
 }
 
 .hidden {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
 
 $logo-size: 40px;
@@ -111,7 +111,11 @@ $header-padding: 5px;
     vertical-align: bottom;
 }
 .header__mixcloud-container {
-
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    left: 71px;
+    right: 337px;
 }
 
 #pre-save-link, #pre-order-link {
@@ -365,6 +369,17 @@ img {
         width: 129px;
         span {
             padding-bottom: 6px;
+        }
+    }
+
+    #after-text-mobile {
+        iframe {
+            position: absolute;
+            top: 50%;
+            left: 0; right: 0;
+            transform: translateY(-20%);
+
+            border-style: none;
         }
     }
 }
